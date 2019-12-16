@@ -154,6 +154,8 @@ class Design:
         if seed is None:
             seed = 751783496 if validation else 450829120
 
+        lhsmin = self.min.copy()
+
         self.array = lhsmin + (self.max - lhsmin)*generate_lhs(
             npoints=npoints, ndim=self.ndim, seed=seed
         )
